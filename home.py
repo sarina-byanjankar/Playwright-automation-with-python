@@ -4,11 +4,11 @@ from playwright.sync_api import sync_playwright
 with sync_playwright() as p:  # starts the browser
     browser = p.firefox.launch(headless=False)
     page = browser.new_page()
+
     page.goto("https://www.daraz.com.np")
     # using CSS selector to type "laptop" in the search box
     page.type("input[name='q']", "laptop")
-    
-    
+
     # using class selector to click the search button
     page.click(".search-box__button--1oH7")
     # clicking on first product on the list from the respective class
